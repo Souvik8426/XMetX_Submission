@@ -1,0 +1,195 @@
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+  background-color: #FFFDf3;
+  color: #333333;
+  min-height: 100vh;
+}
+
+/* XMetX Logo Styling */
+.logo {
+  height: 4em;
+  padding: 1em;
+  will-change: filter;
+  transition: filter 300ms ease-in-out;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1.5em #5C92C7aa);
+}
+
+.logo.xmetx:hover {
+  filter: drop-shadow(0 0 2em #1F376Aaa);
+}
+
+/* XMetX Brand Animation */
+@keyframes xmetx-glow {
+  from {
+    filter: drop-shadow(0 0 0.5em #5C92C7);
+  }
+  to {
+    filter: drop-shadow(0 0 1.5em #1F376A);
+  }
+}
+
+@keyframes logo-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo.xmetx {
+    animation: logo-pulse 3s ease-in-out infinite;
+  }
+}
+
+/* XMetX Card Components */
+.card {
+  padding: 2em;
+  background-color: #FFFDf3;
+  border: 1px solid #5C92C7;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(31, 55, 106, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #1F376A;
+  box-shadow: 0 8px 25px rgba(31, 55, 106, 0.15);
+  transform: translateY(-2px);
+}
+
+/* XMetX Text Styles */
+.brand-text {
+  color: #1F376A;
+  font-weight: 600;
+}
+
+.secondary-text {
+  color: #3D6B9C;
+}
+
+.accent-text {
+  color: #5C92C7;
+}
+
+.body-text {
+  color: #333333;
+}
+
+.muted-text {
+  color: #666666;
+}
+
+/* XMetX Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, #1F376A 0%, #5C92C7 100%);
+  color: #FFFDf3;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(31, 55, 106, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #3D6B9C;
+  border: 2px solid #3D6B9C;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #3D6B9C;
+  color: #FFFDf3;
+  transform: translateY(-1px);
+}
+
+/* XMetX Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 4em 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* XMetX Gradient Backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #1F376A 0%, #3D6B9C 100%);
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, #3D6B9C 0%, #5C92C7 100%);
+}
+
+/* XMetX Form Styles */
+.form-input {
+  background-color: #FFFDf3;
+  border: 2px solid #5C92C7;
+  color: #333333;
+  padding: 0.75em;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #1F376A;
+  box-shadow: 0 0 0 3px rgba(31, 55, 106, 0.1);
+}
+
+.form-label {
+  color: #1F376A;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #root {
+    padding: 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section {
+    padding: 2em 0;
+  }
+  
+  .card {
+    padding: 1.5em;
+  }
+}

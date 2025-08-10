@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 100% 98%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 215 54% 27%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 44% 42%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 205 48% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 215 54% 27%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 48 8% 98%;
+    --foreground: 0 0% 80%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 215 54% 27%;
+    --primary-foreground: 48 8% 98%;
+    --secondary: 210 44% 42%;
+    --secondary-foreground: 48 8% 98%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 205 48% 58%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 205 48% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sora antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-unbounded;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(225deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.glass-hover {
+  @apply transition-all duration-300 hover:bg-white/10;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+.button-gradient {
+  @apply bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity rounded-full;
+}
+
+/* XMetX Custom Color Classes */
+.xmetx-primary {
+  color: #1F376A;
+}
+
+.xmetx-secondary {
+  color: #3D6B9C;
+}
+
+.xmetx-accent {
+  color: #5C92C7;
+}
+
+.xmetx-bg {
+  background-color: #FFFDf3;
+}
+
+.xmetx-text {
+  color: #333333;
+}
+
+.xmetx-bg-primary {
+  background-color: #1F376A;
+}
+
+.xmetx-bg-secondary {
+  background-color: #3D6B9C;
+}
+
+.xmetx-bg-accent {
+  background-color: #5C92C7;
+}
+
+/* XMetX Button Gradients */
+.xmetx-button-gradient {
+  background: linear-gradient(135deg, #1F376A 0%, #5C92C7 100%);
+  transition: opacity 0.3s ease;
+}
+
+.xmetx-button-gradient:hover {
+  opacity: 0.9;
+}
+
+.xmetx-text-gradient {
+  background: linear-gradient(135deg, #1F376A 0%, #3D6B9C 50%, #5C92C7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
